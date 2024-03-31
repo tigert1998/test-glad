@@ -1,5 +1,5 @@
 // clang-format off
-#include <glad/glad.h>
+#include "gl.h"
 // clang-format on
 
 #include <GLFW/glfw3.h>
@@ -21,7 +21,14 @@ void Init(uint32_t width, uint32_t height) {
 
   window = glfwCreateWindow(width, height, "Test GLAD", nullptr, nullptr);
   glfwMakeContextCurrent(window);
+#ifdef USE_GLAD
   gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+  fmt::println("Using GLAD");
+#endif
+#ifdef USE_NVGL
+  load_GL((nvGLLoaderGetProcFN)glfwGetProcAddress);
+  fmt::println("Using NVGL");
+#endif
 
   Shader::include_directories = {"./shaders"};
 

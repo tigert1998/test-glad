@@ -7,3 +7,6 @@
 [submodule "third_party/fmt"]
 	path = third_party/fmt
 	url = https://github.com/fmtlib/fmt.git
+[submodule "third_party/nvpro_core"]
+	path = third_party/nvpro_core
+	url = https://github.com/nvpro-samples/nvpro_core.git

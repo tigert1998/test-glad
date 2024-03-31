@@ -1,7 +1,6 @@
 #include "shader.h"
 
 #include <fmt/core.h>
-#include <glad/glad.h>
 
 #include <fstream>
 #include <glm/glm.hpp>
@@ -12,6 +11,7 @@
 #include <vector>
 
 #include "cg_exception.h"
+#include "gl.h"
 #include "utils.h"
 
 namespace fs = std::filesystem;
